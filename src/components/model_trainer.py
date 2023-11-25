@@ -28,7 +28,7 @@ class ModelTrainer:
                 test_array[1]
             )
 
-            rfc=RandomForestClassifier(n_estimators=100,class_weight='balanced')
+            rfc=RandomForestClassifier(n_estimators=100,class_weight='balanced',max_depth=20)
             rfc.fit(X_train,y_train)
             rfc_prob=rfc.predict_proba(X_test)
 
