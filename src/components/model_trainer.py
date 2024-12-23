@@ -5,9 +5,9 @@ from sklearn.metrics import roc_auc_score
 from sklearn.ensemble import RandomForestClassifier
 
 from src.exception import CustomException
-from src.logger import logging
 
-from src.utils import save_object,evaluate_models
+from src.custom_logger import logging
+from src.utils import save_object
 
 @dataclass
 class ModelTrainerConfig:
@@ -20,7 +20,7 @@ class ModelTrainer:
 
     def initiate_model_trainer(self,train_array,test_array):
         try:
-            logging.info("Split training and test input data")
+            logging.info("Preparing training and test input data")
             X_train,y_train,X_test,y_test=(
                 train_array[0],
                 train_array[1],
@@ -31,12 +31,12 @@ class ModelTrainer:
             rfc=RandomForestClassifier(n_estimators=100,class_weight='balanced',max_depth=20)
             rfc.fit(X_train,y_train)
             rfc_prob=rfc.predict_proba(X_test)
-
+            logging.info("Model fitting done")
             save_object(
                 file_path=self.model_trainer_config.trained_model_file_path,
                 obj=rfc
             )
-
+            logging.info("Model file saved ")
             return roc_auc_score(y_test,rfc_prob[:,1])
             
 

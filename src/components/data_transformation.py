@@ -9,10 +9,10 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder,    OrdinalEncoder
 
 from src.exception import CustomException
-from src.logger import logging
+from src.custom_logger import logging
 import os
 
-from utils import save_object
+from src.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
@@ -24,7 +24,7 @@ class DataTransformation:
 
     def get_data_transformer_object(self):
         '''
-        This function si responsible for data trnasformation
+        This function is responsible for data transformation
         
         '''
         try:
