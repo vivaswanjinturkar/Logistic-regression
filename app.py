@@ -62,6 +62,9 @@ async def process_multiple_data(data: MultipleBankData):
     df['prediction']=results
     return {"predictions": df.to_dict(orient="records")}
 
+@app.get("/")
+async def read_root():
+    return {"message": "Welcome to my FastAPI application!"}
 
 
 # if __name__=="__main__":  
