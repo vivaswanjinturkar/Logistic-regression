@@ -26,7 +26,7 @@ sample_data = {
             "cons_price_idx": 93.994,
             "cons_conf_idx": -36.4,
             "euribor3m": 4.857,
-            "nr_employed": 5099.1,
+            "nr_employed": 5099.1
         },
         {
             "age": 42,
@@ -48,7 +48,7 @@ sample_data = {
             "cons_price_idx": 92.893,
             "cons_conf_idx": -42.7,
             "euribor3m": 4.191,
-            "nr_employed": 5076.2,
+            "nr_employed": 5076.2
         }
     ]
 }

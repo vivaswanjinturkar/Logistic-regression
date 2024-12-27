@@ -57,8 +57,8 @@ async def process_multiple_data(data: MultipleBankData):
     )
     predict_pipeline = PredictPipeline()
     results = predict_pipeline.predict(df)
-    print(results)
-    print(type(results))
+    # print(results)
+    # print(type(results))
     df['prediction']=results
     return {"predictions": df.to_dict(orient="records")}
 
